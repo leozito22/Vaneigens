@@ -179,7 +179,15 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>Office__c</tabs>
+    <tabs>DayInOffice__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>DayInOffice__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Office__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

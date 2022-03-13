@@ -11,4 +11,6 @@
     <tabs>standard-Solution</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>Office__c</tabs>
+    <tabs>DayInOffice__c</tabs>
 </CustomApplication>

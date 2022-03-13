@@ -12,5 +12,7 @@
     <tabs>standard-WorkType</tabs>
     <tabs>standard-OperatingHours</tabs>
     <tabs>standard-ServiceAppointment</tabs>
+    <tabs>Office__c</tabs>
+    <tabs>DayInOffice__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>
