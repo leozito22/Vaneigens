@@ -386,7 +386,7 @@
             <table>Account.Offices__r.Days_in_Office__r</table>
         </columns>
         <columns>
-            <checkedByDefault>false</checkedByDefault>
+            <checkedByDefault>true</checkedByDefault>
             <field>ScheduledDate__c</field>
             <table>Account.Offices__r.Days_in_Office__r</table>
         </columns>
