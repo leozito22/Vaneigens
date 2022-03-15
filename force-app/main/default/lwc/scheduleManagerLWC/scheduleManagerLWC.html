@@ -1,3 +1,47 @@
 <template>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered ">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="">Day in office</div>
+                </th>
+                <th class="" scope="col">
+                    
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="">Office</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="">Employee</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="">Scheduled Date</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template if:true={daysInOffice.data}>
+                <template for:each={daysInOffice.data} for:item="plan">
+                    <tr key={plan.Id}>
+                        <td rowspan="1">
+                            {plan.Name}
+                        </td>
+                        <td></td>
+                        <td>
+                            {plan.Office__r.Name}
+                        </td>
+                        <td>
+                            {plan.Contact__r.Name}
+                        </td>
+                        <td>
+                            {plan.ScheduledDate__c}
+                        </td>
+                    </tr>
+                    
+                </template>
+            </template>
+        </tbody>
+    </table>
     
 </template>

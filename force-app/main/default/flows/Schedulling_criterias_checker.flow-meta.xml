@@ -4,8 +4,8 @@
     <assignments>
         <name>Count_people</name>
         <label>Count people</label>
-        <locationX>314</locationX>
-        <locationY>911</locationY>
+        <locationX>1294</locationX>
+        <locationY>959</locationY>
         <assignmentItems>
             <assignToReference>Count1</assignToReference>
             <operator>AssignCount</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Same_day_same_employee</name>
         <label>Same day same employee</label>
-        <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationX>1096</locationX>
+        <locationY>479</locationY>
         <assignmentItems>
             <assignToReference>Count</assignToReference>
             <operator>AssignCount</operator>
@@ -36,8 +36,8 @@
     <decisions>
         <name>Duplicate_decision</name>
         <label>Duplicate decision</label>
-        <locationX>182</locationX>
-        <locationY>671</locationY>
+        <locationX>1096</locationX>
+        <locationY>719</locationY>
         <defaultConnector>
             <targetReference>Same_day_scheduled_limit</targetReference>
         </defaultConnector>
@@ -58,6 +58,28 @@
             <label>Duplicate counter criteria</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Success_decision</name>
+        <label>Success decision</label>
+        <locationX>1294</locationX>
+        <locationY>1199</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Counter_Greater_than_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Count1</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>4.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_limit_exceeded_0</targetReference>
+            </connector>
+            <label>Counter Greater than 4</label>
+        </rules>
+    </decisions>
     <interviewLabel>Schedulling criterias checker {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Schedulling criterias checker</label>
     <processMetadataValues>
@@ -69,7 +91,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -82,8 +104,8 @@
     <recordLookups>
         <name>Employee</name>
         <label>Employee</label>
-        <locationX>182</locationX>
-        <locationY>311</locationY>
+        <locationX>1096</locationX>
+        <locationY>359</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Same_day_same_employee</targetReference>
@@ -110,8 +132,8 @@
     <recordLookups>
         <name>Same_day_scheduled_limit</name>
         <label>Same day scheduled limit</label>
-        <locationX>314</locationX>
-        <locationY>791</locationY>
+        <locationX>1294</locationX>
+        <locationY>839</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Count_people</targetReference>
@@ -136,10 +158,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Check_limit_exceeded</name>
+        <name>Check_limit_exceeded_0</name>
         <label>Check limit exceeded</label>
-        <locationX>314</locationX>
-        <locationY>1151</locationY>
+        <locationX>1162</locationX>
+        <locationY>1319</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>SameDayCounting__c</field>
@@ -159,8 +181,8 @@
     <recordUpdates>
         <name>Duplicated_checkbox_0</name>
         <label>Duplicated checkbox</label>
-        <locationX>50</locationX>
-        <locationY>791</locationY>
+        <locationX>898</locationX>
+        <locationY>839</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>DuplicatedCounter__c</field>
@@ -180,10 +202,10 @@
     <recordUpdates>
         <name>Same_day_counting_update</name>
         <label>Same day counting update</label>
-        <locationX>314</locationX>
-        <locationY>1031</locationY>
+        <locationX>1294</locationX>
+        <locationY>1079</locationY>
         <connector>
-            <targetReference>Check_limit_exceeded</targetReference>
+            <targetReference>Success_decision</targetReference>
         </connector>
         <inputAssignments>
             <field>SameDayCounting__c</field>
@@ -196,8 +218,8 @@
     <recordUpdates>
         <name>Update_counter</name>
         <label>Update counter</label>
-        <locationX>182</locationX>
-        <locationY>551</locationY>
+        <locationX>1096</locationX>
+        <locationY>599</locationY>
         <connector>
             <targetReference>Duplicate_decision</targetReference>
         </connector>
@@ -210,8 +232,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
-        <locationY>0</locationY>
+        <locationX>970</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Employee</targetReference>
         </connector>
@@ -219,7 +241,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>Count</name>
         <dataType>Number</dataType>

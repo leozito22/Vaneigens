@@ -101,6 +101,14 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>EmployeesPerDayHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ScheduleManagerHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>refreshDashboardfromId</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3557,15 +3565,7 @@
     </fieldPermissions>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Dash_Refresh</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Duplicated_employee_scheduling</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>EmployeesPerDayCounter</flow>
+        <flow>Schedule_Email_Trigger</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
